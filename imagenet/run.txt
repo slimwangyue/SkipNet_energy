@@ -1,0 +1,1905 @@
+SMAP point = 5
+NumTiles 0 : 9
+NumTiles 1 : 9
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 9
+NumTiles 5 : 9
+Sizeof Layer[2] = 7
+layerDim[0] =64
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =3
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =7
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =7
+TSz[3] = 7
+TUSz[3] = 1
+layerDim[4] =224
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =224
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:1075200, numSpatialFold:1, numTiles: 64, numActivePE_ege: 7, tileSz: 1
+numTempFold = 1075200, numSpatialFold = 1, numS_weight = 7, numS_input = 9, numS_sum = 63, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (7) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 158.00Byte
+L2Buffer Requirement: 1.05KB
+ == L1 Count == 
+L1RdCount: 993484800
+L1WrCount: 594585600
+  L1RdWeight: 474163200
+  L1WrWeight: 52684800
+  L1 weight reuse: 9.000000
+  L1RdInput: 474163200
+  L1WrInput: 67737600
+  L1 input reuse: 7.000000
+  L1RdSum: 45158400
+  L1WrSum: 474163200
+ == L2 Count == 
+L2RdCount: 211815296
+L2WrCount: 7686336
+  L2RdWeight: 68813184
+  L2WrWeight: 9408
+  L2 weight reuse: 7314.326531
+  L2RdInput: 68813312
+  L2WrInput: 150528
+  L2 input reuse: 457.146259
+  L1RdSum: 45158400
+  L2RdSum: 74188800
+  L2WrSum: 7526400
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 63 cycles
+L2 to L1 NocBW: 142 elements for every 63 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.968889 GFLOPS with 1GHz clock
+L1 to L2 sum: 69.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 16.625000
+Compute rumtime: 782.000000
+total runtime: 858009600 cycles
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =64
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =64
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =112
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =112
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:2752512, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 2752512, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 462422016
+L1WrCount: 322043904
+  L1RdWeight: 222953472
+  L1WrWeight: 24772608
+  L1 weight reuse: 9.000000
+  L1RdInput: 222953472
+  L1WrInput: 74317824
+  L1 input reuse: 3.000000
+  L1RdSum: 16515072
+  L1WrSum: 222953472
+ == L2 Count == 
+L2RdCount: 432145024
+L2WrCount: 9097216
+  L2RdWeight: 176160896
+  L2WrWeight: 36864
+  L2 weight reuse: 4778.670139
+  L2RdInput: 176161280
+  L2WrInput: 802816
+  L2 input reuse: 219.429209
+  L1RdSum: 16515072
+  L2RdSum: 79822848
+  L2WrSum: 8257536
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.222222 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 1973551104 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =64
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =64
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =56
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =56
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:229376, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 229376, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 4358144
+L1WrCount: 4358144
+  L1RdWeight: 2064384
+  L1WrWeight: 229376
+  L1 weight reuse: 9.000000
+  L1RdInput: 2064384
+  L1WrInput: 2064384
+  L1 input reuse: 1.000000
+  L1RdSum: 229376
+  L1WrSum: 2064384
+ == L2 Count == 
+L2RdCount: 31425024
+L2WrCount: 434176
+  L2RdWeight: 14680064
+  L2WrWeight: 4096
+  L2 weight reuse: 3584.000000
+  L2RdInput: 14680576
+  L2WrInput: 200704
+  L2 input reuse: 73.145408
+  L1RdSum: 229376
+  L2RdSum: 2064384
+  L2WrSum: 229376
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.222222 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 155287552 cycles 
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =64
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =64
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =56
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =56
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:688128, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 688128, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 115605504
+L1WrCount: 80510976
+  L1RdWeight: 55738368
+  L1WrWeight: 6193152
+  L1 weight reuse: 9.000000
+  L1RdInput: 55738368
+  L1WrInput: 18579456
+  L1 input reuse: 3.000000
+  L1RdSum: 4128768
+  L1WrSum: 55738368
+ == L2 Count == 
+L2RdCount: 108036736
+L2WrCount: 2301952
+  L2RdWeight: 44040320
+  L2WrWeight: 36864
+  L2 weight reuse: 1194.670139
+  L2RdInput: 44040704
+  L2WrInput: 200704
+  L2 input reuse: 219.431122
+  L1RdSum: 4128768
+  L2RdSum: 19955712
+  L2WrSum: 2064384
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.222222 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 493387776 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =256
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =64
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =56
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =56
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:917504, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 917504, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 17432576
+L1WrCount: 17432576
+  L1RdWeight: 8257536
+  L1WrWeight: 917504
+  L1 weight reuse: 9.000000
+  L1RdInput: 8257536
+  L1WrInput: 8257536
+  L1 input reuse: 1.000000
+  L1RdSum: 917504
+  L1WrSum: 8257536
+ == L2 Count == 
+L2RdCount: 125698560
+L2WrCount: 1134592
+  L2RdWeight: 58720256
+  L2WrWeight: 16384
+  L2 weight reuse: 3584.000000
+  L2RdInput: 58720768
+  L2WrInput: 200704
+  L2 input reuse: 292.573980
+  L1RdSum: 917504
+  L2RdSum: 8257536
+  L2WrSum: 917504
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.222222 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 621150208 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =64
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =256
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =56
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =56
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:917504, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 917504, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 17432576
+L1WrCount: 17432576
+  L1RdWeight: 8257536
+  L1WrWeight: 917504
+  L1 weight reuse: 9.000000
+  L1RdInput: 8257536
+  L1WrInput: 8257536
+  L1 input reuse: 1.000000
+  L1RdSum: 917504
+  L1WrSum: 8257536
+ == L2 Count == 
+L2RdCount: 125698560
+L2WrCount: 1736704
+  L2RdWeight: 58720256
+  L2WrWeight: 16384
+  L2 weight reuse: 3584.000000
+  L2RdInput: 58720768
+  L2WrInput: 802816
+  L2 input reuse: 73.143495
+  L1RdSum: 917504
+  L2RdSum: 8257536
+  L2WrSum: 917504
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.222222 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 621150208 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =128
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =256
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =56
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =56
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:1835008, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 1835008, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 34865152
+L1WrCount: 34865152
+  L1RdWeight: 16515072
+  L1WrWeight: 1835008
+  L1 weight reuse: 9.000000
+  L1RdInput: 16515072
+  L1WrInput: 16515072
+  L1 input reuse: 1.000000
+  L1RdSum: 1835008
+  L1WrSum: 16515072
+ == L2 Count == 
+L2RdCount: 251396608
+L2WrCount: 2670592
+  L2RdWeight: 117440512
+  L2WrWeight: 32768
+  L2 weight reuse: 3584.000000
+  L2RdInput: 117441024
+  L2WrInput: 802816
+  L2 input reuse: 146.286352
+  L1RdSum: 1835008
+  L2RdSum: 16515072
+  L2WrSum: 1835008
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.222222 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 1242300416 cycles 
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =128
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =128
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =56
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =56
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:2752512, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 2752512, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 462422016
+L1WrCount: 322043904
+  L1RdWeight: 222953472
+  L1WrWeight: 24772608
+  L1 weight reuse: 9.000000
+  L1RdInput: 222953472
+  L1WrInput: 74317824
+  L1 input reuse: 3.000000
+  L1RdSum: 16515072
+  L1WrSum: 222953472
+ == L2 Count == 
+L2RdCount: 432145024
+L2WrCount: 8806400
+  L2RdWeight: 176160896
+  L2WrWeight: 147456
+  L2 weight reuse: 1194.667535
+  L2RdInput: 176161280
+  L2WrInput: 401408
+  L2 input reuse: 438.858418
+  L1RdSum: 16515072
+  L2RdSum: 79822848
+  L2WrSum: 8257536
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.222222 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 1973551104 cycles 
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =512
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =128
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =28
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =28
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:3670016, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 3670016, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 616562688
+L1WrCount: 429391872
+  L1RdWeight: 297271296
+  L1WrWeight: 33030144
+  L1 weight reuse: 9.000000
+  L1RdInput: 297271296
+  L1WrInput: 99090432
+  L1 input reuse: 3.000000
+  L1RdSum: 22020096
+  L1WrSum: 297271296
+ == L2 Count == 
+L2RdCount: 576193152
+L2WrCount: 11700224
+  L2RdWeight: 234881152
+  L2WrWeight: 589824
+  L2 weight reuse: 398.222439
+  L2RdInput: 234881536
+  L2WrInput: 100352
+  L2 input reuse: 2340.576531
+  L1RdSum: 22020096
+  L2RdSum: 106430464
+  L2WrSum: 11010048
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 4.666667 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 2631401472 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =512
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =256
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =56
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =56
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:7340032, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 7340032, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 139460608
+L1WrCount: 139460608
+  L1RdWeight: 66060288
+  L1WrWeight: 7340032
+  L1 weight reuse: 9.000000
+  L1RdInput: 66060288
+  L1WrInput: 66060288
+  L1 input reuse: 1.000000
+  L1RdSum: 7340032
+  L1WrSum: 66060288
+ == L2 Count == 
+L2RdCount: 1005584896
+L2WrCount: 8273920
+  L2RdWeight: 469762048
+  L2WrWeight: 131072
+  L2 weight reuse: 3584.000000
+  L2RdInput: 469762560
+  L2WrInput: 802816
+  L2 input reuse: 585.143495
+  L1RdSum: 7340032
+  L2RdSum: 66060288
+  L2WrSum: 7340032
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 6.222222 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 4969201664 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =128
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =512
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =28
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =28
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:1835008, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 1835008, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 34865152
+L1WrCount: 34865152
+  L1RdWeight: 16515072
+  L1WrWeight: 1835008
+  L1 weight reuse: 9.000000
+  L1RdInput: 16515072
+  L1WrInput: 16515072
+  L1 input reuse: 1.000000
+  L1RdSum: 1835008
+  L1WrSum: 16515072
+ == L2 Count == 
+L2RdCount: 251396608
+L2WrCount: 2301952
+  L2RdWeight: 117440512
+  L2WrWeight: 65536
+  L2 weight reuse: 1792.000000
+  L2RdInput: 117441024
+  L2WrInput: 401408
+  L2 input reuse: 292.572704
+  L1RdSum: 1835008
+  L2RdSum: 16515072
+  L2WrSum: 1835008
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 3.111111 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 1242300416 cycles 
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =128
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =128
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =28
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =28
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:917504, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 917504, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 154140672
+L1WrCount: 107347968
+  L1RdWeight: 74317824
+  L1WrWeight: 8257536
+  L1 weight reuse: 9.000000
+  L1RdInput: 74317824
+  L1WrInput: 24772608
+  L1 input reuse: 3.000000
+  L1RdSum: 5505024
+  L1WrSum: 74317824
+ == L2 Count == 
+L2RdCount: 144048768
+L2WrCount: 3000320
+  L2RdWeight: 58720384
+  L2WrWeight: 147456
+  L2 weight reuse: 398.223090
+  L2RdInput: 58720768
+  L2WrInput: 100352
+  L2 input reuse: 585.147959
+  L1RdSum: 5505024
+  L2RdSum: 26607616
+  L2WrSum: 2752512
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 4.666667 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 657850368 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =512
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =128
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =28
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =28
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:1835008, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 1835008, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 34865152
+L1WrCount: 34865152
+  L1RdWeight: 16515072
+  L1WrWeight: 1835008
+  L1 weight reuse: 9.000000
+  L1RdInput: 16515072
+  L1WrInput: 16515072
+  L1 input reuse: 1.000000
+  L1RdSum: 1835008
+  L1WrSum: 16515072
+ == L2 Count == 
+L2RdCount: 251396608
+L2WrCount: 2000896
+  L2RdWeight: 117440512
+  L2WrWeight: 65536
+  L2 weight reuse: 1792.000000
+  L2RdInput: 117441024
+  L2WrInput: 100352
+  L2 input reuse: 1170.290816
+  L1RdSum: 1835008
+  L2RdSum: 16515072
+  L2WrSum: 1835008
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 3.111111 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 1242300416 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =256
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =512
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =28
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =28
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:3670016, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 3670016, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 69730304
+L1WrCount: 69730304
+  L1RdWeight: 33030144
+  L1WrWeight: 3670016
+  L1 weight reuse: 9.000000
+  L1RdInput: 33030144
+  L1WrInput: 33030144
+  L1 input reuse: 1.000000
+  L1RdSum: 3670016
+  L1WrSum: 33030144
+ == L2 Count == 
+L2RdCount: 502792704
+L2WrCount: 4202496
+  L2RdWeight: 234881024
+  L2WrWeight: 131072
+  L2 weight reuse: 1792.000000
+  L2RdInput: 234881536
+  L2WrInput: 401408
+  L2 input reuse: 585.144133
+  L1RdSum: 3670016
+  L2RdSum: 33030144
+  L2WrSum: 3670016
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 3.111111 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 2484600832 cycles 
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =256
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =256
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =28
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =28
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:3670016, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 3670016, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 616562688
+L1WrCount: 429391872
+  L1RdWeight: 297271296
+  L1WrWeight: 33030144
+  L1 weight reuse: 9.000000
+  L1RdInput: 297271296
+  L1WrInput: 99090432
+  L1 input reuse: 3.000000
+  L1RdSum: 22020096
+  L1WrSum: 297271296
+ == L2 Count == 
+L2RdCount: 576193152
+L2WrCount: 11800576
+  L2RdWeight: 234881152
+  L2WrWeight: 589824
+  L2 weight reuse: 398.222439
+  L2RdInput: 234881536
+  L2WrInput: 200704
+  L2 input reuse: 1170.288265
+  L1RdSum: 22020096
+  L2RdSum: 106430464
+  L2WrSum: 11010048
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 4.666667 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 2631401472 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =1024
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =256
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =14
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =14
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:3670016, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 3670016, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 69730304
+L1WrCount: 69730304
+  L1RdWeight: 33030144
+  L1WrWeight: 3670016
+  L1 weight reuse: 9.000000
+  L1RdInput: 33030144
+  L1WrInput: 33030144
+  L1 input reuse: 1.000000
+  L1RdSum: 3670016
+  L1WrSum: 33030144
+ == L2 Count == 
+L2RdCount: 502792704
+L2WrCount: 3982336
+  L2RdWeight: 234881024
+  L2WrWeight: 262144
+  L2 weight reuse: 896.000000
+  L2RdInput: 234881536
+  L2WrInput: 50176
+  L2 input reuse: 4681.153061
+  L1RdSum: 3670016
+  L2RdSum: 33030144
+  L2WrSum: 3670016
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 1.555556 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 2484600832 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =1024
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =256
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =28
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =28
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:7340032, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 7340032, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 139460608
+L1WrCount: 139460608
+  L1RdWeight: 66060288
+  L1WrWeight: 7340032
+  L1 weight reuse: 9.000000
+  L1RdInput: 66060288
+  L1WrInput: 66060288
+  L1 input reuse: 1.000000
+  L1RdSum: 7340032
+  L1WrSum: 66060288
+ == L2 Count == 
+L2RdCount: 1005584896
+L2WrCount: 7802880
+  L2RdWeight: 469762048
+  L2WrWeight: 262144
+  L2 weight reuse: 1792.000000
+  L2RdInput: 469762560
+  L2WrInput: 200704
+  L2 input reuse: 2340.573980
+  L1RdSum: 7340032
+  L2RdSum: 66060288
+  L2WrSum: 7340032
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 3.111111 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 4969201664 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =256
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =1024
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =14
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =14
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:3670016, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 3670016, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 69730304
+L1WrCount: 69730304
+  L1RdWeight: 33030144
+  L1WrWeight: 3670016
+  L1 weight reuse: 9.000000
+  L1RdInput: 33030144
+  L1WrInput: 33030144
+  L1 input reuse: 1.000000
+  L1RdSum: 3670016
+  L1WrSum: 33030144
+ == L2 Count == 
+L2RdCount: 502792704
+L2WrCount: 4132864
+  L2RdWeight: 234881024
+  L2WrWeight: 262144
+  L2 weight reuse: 896.000000
+  L2RdInput: 234881536
+  L2WrInput: 200704
+  L2 input reuse: 1170.288265
+  L1RdSum: 3670016
+  L2RdSum: 33030144
+  L2WrSum: 3670016
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 1.555556 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 2484600832 cycles 
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =256
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =256
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =14
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =14
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:917504, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 917504, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 154140672
+L1WrCount: 107347968
+  L1RdWeight: 74317824
+  L1WrWeight: 8257536
+  L1 weight reuse: 9.000000
+  L1RdInput: 74317824
+  L1WrInput: 24772608
+  L1 input reuse: 3.000000
+  L1RdSum: 5505024
+  L1WrSum: 74317824
+ == L2 Count == 
+L2RdCount: 144048768
+L2WrCount: 3392512
+  L2RdWeight: 58720384
+  L2WrWeight: 589824
+  L2 weight reuse: 99.555773
+  L2RdInput: 58720768
+  L2WrInput: 50176
+  L2 input reuse: 1170.295918
+  L1RdSum: 5505024
+  L2RdSum: 26607616
+  L2WrSum: 2752512
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 4.666667 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 657850368 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =1024
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =256
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =14
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =14
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:3670016, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 3670016, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 69730304
+L1WrCount: 69730304
+  L1RdWeight: 33030144
+  L1WrWeight: 3670016
+  L1 weight reuse: 9.000000
+  L1RdInput: 33030144
+  L1WrInput: 33030144
+  L1 input reuse: 1.000000
+  L1RdSum: 3670016
+  L1WrSum: 33030144
+ == L2 Count == 
+L2RdCount: 502792704
+L2WrCount: 3982336
+  L2RdWeight: 234881024
+  L2WrWeight: 262144
+  L2 weight reuse: 896.000000
+  L2RdInput: 234881536
+  L2WrInput: 50176
+  L2 input reuse: 4681.153061
+  L1RdSum: 3670016
+  L2RdSum: 33030144
+  L2WrSum: 3670016
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 1.555556 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 2484600832 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =512
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =1024
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =14
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =14
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:7340032, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 7340032, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 139460608
+L1WrCount: 139460608
+  L1RdWeight: 66060288
+  L1WrWeight: 7340032
+  L1 weight reuse: 9.000000
+  L1RdInput: 66060288
+  L1WrInput: 66060288
+  L1 input reuse: 1.000000
+  L1RdSum: 7340032
+  L1WrSum: 66060288
+ == L2 Count == 
+L2RdCount: 1005584896
+L2WrCount: 8065024
+  L2RdWeight: 469762048
+  L2WrWeight: 524288
+  L2 weight reuse: 896.000000
+  L2RdInput: 469762560
+  L2WrInput: 200704
+  L2 input reuse: 2340.573980
+  L1RdSum: 7340032
+  L2RdSum: 66060288
+  L2WrSum: 7340032
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 1.555556 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 4969201664 cycles 
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =512
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =512
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =14
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =14
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:3670016, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 3670016, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 616562688
+L1WrCount: 429391872
+  L1RdWeight: 297271296
+  L1WrWeight: 33030144
+  L1 weight reuse: 9.000000
+  L1RdInput: 297271296
+  L1WrInput: 99090432
+  L1 input reuse: 3.000000
+  L1RdSum: 22020096
+  L1WrSum: 297271296
+ == L2 Count == 
+L2RdCount: 576193152
+L2WrCount: 13469696
+  L2RdWeight: 234881152
+  L2WrWeight: 2359296
+  L2 weight reuse: 99.555610
+  L2RdInput: 234881536
+  L2WrInput: 100352
+  L2 input reuse: 2340.576531
+  L1RdSum: 22020096
+  L2RdSum: 106430464
+  L2WrSum: 11010048
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 4.666667 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 2631401472 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =2048
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =512
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =7
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =7
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:7340032, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 7340032, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 139460608
+L1WrCount: 139460608
+  L1RdWeight: 66060288
+  L1WrWeight: 7340032
+  L1 weight reuse: 9.000000
+  L1RdInput: 66060288
+  L1WrInput: 66060288
+  L1 input reuse: 1.000000
+  L1RdSum: 7340032
+  L1WrSum: 66060288
+ == L2 Count == 
+L2RdCount: 1005584896
+L2WrCount: 8413696
+  L2RdWeight: 469762048
+  L2WrWeight: 1048576
+  L2 weight reuse: 448.000000
+  L2RdInput: 469762560
+  L2WrInput: 25088
+  L2 input reuse: 18724.591837
+  L1RdSum: 7340032
+  L2RdSum: 66060288
+  L2WrSum: 7340032
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 0.777778 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 4969201664 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =2048
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =1024
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =14
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =14
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:29360128, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 29360128, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 557842432
+L1WrCount: 557842432
+  L1RdWeight: 264241152
+  L1WrWeight: 29360128
+  L1 weight reuse: 9.000000
+  L1RdInput: 264241152
+  L1WrInput: 264241152
+  L1 input reuse: 1.000000
+  L1RdSum: 29360128
+  L1WrSum: 264241152
+ == L2 Count == 
+L2RdCount: 4022338048
+L2WrCount: 31657984
+  L2RdWeight: 1879048192
+  L2WrWeight: 2097152
+  L2 weight reuse: 896.000000
+  L2RdInput: 1879048704
+  L2WrInput: 200704
+  L2 input reuse: 9362.288265
+  L1RdSum: 29360128
+  L2RdSum: 264241152
+  L2WrSum: 29360128
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 1.555556 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 19876806656 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =512
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =2048
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =7
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =7
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:7340032, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 7340032, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 139460608
+L1WrCount: 139460608
+  L1RdWeight: 66060288
+  L1WrWeight: 7340032
+  L1 weight reuse: 9.000000
+  L1RdInput: 66060288
+  L1WrInput: 66060288
+  L1 input reuse: 1.000000
+  L1RdSum: 7340032
+  L1WrSum: 66060288
+ == L2 Count == 
+L2RdCount: 1005584896
+L2WrCount: 8488960
+  L2RdWeight: 469762048
+  L2WrWeight: 1048576
+  L2 weight reuse: 448.000000
+  L2RdInput: 469762560
+  L2WrInput: 100352
+  L2 input reuse: 4681.147959
+  L1RdSum: 7340032
+  L2RdSum: 66060288
+  L2WrSum: 7340032
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 0.777778 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 4969201664 cycles 
+SMAP point = 5
+NumTiles 0 : 21
+NumTiles 1 : 21
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 21
+NumTiles 5 : 21
+Sizeof Layer[2] = 3
+layerDim[0] =512
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =512
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =3
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =3
+TSz[3] = 3
+TUSz[3] = 1
+layerDim[4] =7
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =7
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:1835008, numSpatialFold:1, numTiles: 64, numActivePE_ege: 3, tileSz: 1
+numTempFold = 1835008, numSpatialFold = 1, numS_weight = 3, numS_input = 9, numS_sum = 27, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (3) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 78.00Byte
+L2Buffer Requirement: 0.89KB
+ == L1 Count == 
+L1RdCount: 308281344
+L1WrCount: 214695936
+  L1RdWeight: 148635648
+  L1WrWeight: 16515072
+  L1 weight reuse: 9.000000
+  L1RdInput: 148635648
+  L1WrInput: 49545216
+  L1 input reuse: 3.000000
+  L1RdSum: 11010048
+  L1WrSum: 148635648
+ == L2 Count == 
+L2RdCount: 288096896
+L2WrCount: 7889408
+  L2RdWeight: 117440640
+  L2WrWeight: 2359296
+  L2 weight reuse: 49.777832
+  L2RdInput: 117441024
+  L2WrInput: 25088
+  L2 input reuse: 4681.163265
+  L1RdSum: 11010048
+  L2RdSum: 53215232
+  L2WrSum: 5505024
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 27 cycles
+L2 to L1 NocBW: 138 elements for every 27 cycles
+<< Performance Analysis  >>
+Roofline throughput: 2.333333 GFLOPS with 1GHz clock
+L1 to L2 sum: 29.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 11.625000
+Compute rumtime: 706.000000
+total runtime: 1315700736 cycles 
+SMAP point = 5
+NumTiles 0 : 64
+NumTiles 1 : 64
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 64
+NumTiles 5 : 64
+Sizeof Layer[2] = 1
+layerDim[0] =2048
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =512
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =1
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =1
+TSz[3] = 1
+TUSz[3] = 1
+layerDim[4] =7
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =7
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:7340032, numSpatialFold:1, numTiles: 64, numActivePE_ege: 1, tileSz: 1
+numTempFold = 7340032, numSpatialFold = 1, numS_weight = 1, numS_input = 9, numS_sum = 9, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (1) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 38.00Byte
+L2Buffer Requirement: 0.81KB
+ == L1 Count == 
+L1RdCount: 139460608
+L1WrCount: 139460608
+  L1RdWeight: 66060288
+  L1WrWeight: 7340032
+  L1 weight reuse: 9.000000
+  L1RdInput: 66060288
+  L1WrInput: 66060288
+  L1 input reuse: 1.000000
+  L1RdSum: 7340032
+  L1WrSum: 66060288
+ == L2 Count == 
+L2RdCount: 1005584896
+L2WrCount: 8413696
+  L2RdWeight: 469762048
+  L2WrWeight: 1048576
+  L2 weight reuse: 448.000000
+  L2RdInput: 469762560
+  L2WrInput: 25088
+  L2 input reuse: 18724.591837
+  L1RdSum: 7340032
+  L2RdSum: 66060288
+  L2WrSum: 7340032
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 9 cycles
+L2 to L1 NocBW: 136 elements for every 9 cycles
+<< Performance Analysis  >>
+Roofline throughput: 0.777778 GFLOPS with 1GHz clock
+L1 to L2 sum: 9.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 9.125000
+Compute rumtime: 668.000000
+total runtime: 4969201664 cycles 
+SMAP point = 5
+NumTiles 0 : 9
+NumTiles 1 : 9
+NumTiles 2 : 64
+NumTiles 3 : 64
+NumTiles 4 : 9
+NumTiles 5 : 9
+Sizeof Layer[2] = 7
+layerDim[0] =1000
+TSz[0] = 1
+TUSz[0] = 1
+layerDim[1] =2048
+TSz[1] = 1
+TUSz[1] = 1
+layerDim[2] =7
+TSz[2] = 1
+TUSz[2] = 1
+layerDim[3] =7
+TSz[3] = 7
+TUSz[3] = 1
+layerDim[4] =7
+TSz[4] = 3
+TUSz[4] = 1
+layerDim[5] =7
+TSz[5] = 3
+TUSz[5] = 1
+numTempFold:14336000, numSpatialFold:1, numTiles: 64, numActivePE_ege: 7, tileSz: 1
+numTempFold = 14336000, numSpatialFold = 1, numS_weight = 7, numS_input = 9, numS_sum = 63, numTiles = 64, numSU_weight = 1, numSU_input = 1, numSU_sum = 1
+MAESTRO analyzed the given dataflow
+<< Input Dataflow >>
+Temporal_Map (1,1) K -> Temporal_Map (1,1) C -> Spatial_Map (3,1) Y -> Tile (7) X -> Temporal_Map (3,1) X -> Spatial_Map (1,1) R -> Unroll S    
+<< Buffer Analysis >>
+ == Buffer Requirement == 
+L1Buffer Requirement: 158.00Byte
+L2Buffer Requirement: 1.05KB
+ == L1 Count == 
+L1RdCount: 13246464000
+L1WrCount: 7927808000
+  L1RdWeight: 6322176000
+  L1WrWeight: 702464000
+  L1 weight reuse: 9.000000
+  L1RdInput: 6322176000
+  L1WrInput: 903168000
+  L1 input reuse: 7.000000
+  L1RdSum: 602112000
+  L1WrSum: 6322176000
+ == L2 Count == 
+L2RdCount: 2824192896
+L2WrCount: 200804352
+  L2RdWeight: 917504384
+  L2WrWeight: 100352000
+  L2 weight reuse: 9.142861
+  L2RdInput: 917504512
+  L2WrInput: 100352
+  L2 input reuse: 9142.862245
+  L1RdSum: 602112000
+  L2RdSum: 989184000
+  L2WrSum: 100352000
+<<NoC Analysis>>
+L1 to L2 NoCBW: 64 elements for every 63 cycles
+L2 to L1 NocBW: 142 elements for every 63 cycles
+<< Performance Analysis  >>
+Roofline throughput: 5.444444 GFLOPS with 1GHz clock
+L1 to L2 sum: 69.000000
+L2 to L1 delay: 0.000000
+L1 to L2 delay: 16.625000
+Compute rumtime: 782.000000
+total runtime: 11440128000 cycles 
+Starting data processing...
