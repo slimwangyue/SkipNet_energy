@@ -25,6 +25,7 @@ import itertools
 import models
 import sys
 import pdb
+from read_test import read_test
 
 model_names = sorted(name for name in models.__dict__
                      if name.islower() and not name.startswith('__')
@@ -47,7 +48,7 @@ def parse_args():
                         type=str, help='path to the imagenet data')
     parser.add_argument('--workers', default=8, type=int, metavar='N',
                         help='number of data loading workers (default: 8)')
-    parser.add_argument('--epochs', default=40, type=int,
+    parser.add_argument('--epochs', default=120, type=int,
                         help='number of total epochs (default: 120)')
     parser.add_argument('--start-epoch', default=0, type=int,
                         help='manual epoch number (useful on restarts)')
@@ -79,6 +80,10 @@ def parse_args():
                         help='scaling weight for rewards')
     parser.add_argument('--gamma', default=1, type=float,
                         help='discount factor')
+    parser.add_argument('--energy', default=True, type=bool,
+                        help='using energy as regularization term')
+    parser.add_argument('--beta', default=1e10, type=float,
+                        help='coefficient')
     parser.add_argument('--restart', action='store_true', help='restart ckpt')
     parser.add_argument('--temp', type=float, default=0.05,
                         help='temperature for gate parameter initialization')
@@ -212,6 +217,7 @@ def train(args, train_loader, model, criterion,
     top1 = AverageMeter()
     top5 = AverageMeter()
     skip_ratios = ListAverageMeter()
+    cp_energy_record = AverageMeter()
     total_rewards = AverageMeter()  # for RL only
 
     model.train()
@@ -226,6 +232,15 @@ def train(args, train_loader, model, criterion,
         target_var = Variable(target)
 
         output, masks, probs, hidden = model(input_var, target_var)
+
+        energy_parameter = read_test(args.beta)[1:]
+
+        energy_cost_mask = 0
+        for layer in range(15):
+            energy_cost_mask += masks[layer] * energy_parameter[layer]
+
+        cp_energy = ((energy_cost_mask.sum() + read_test(args.beta)[0] * masks[0].size(0)) / (
+                    (sum(energy_parameter) + read_test(args.beta)[0]) * masks[0].size(0))) * 100
 
         # collect gate actions, inputs and targets on different GPUs.
         # a walk around to Pytorch's gather function
@@ -292,6 +307,7 @@ def train(args, train_loader, model, criterion,
             rewards.values()))).sum().data[0]
         top1.update(prec1[0], input.size(0))
         top5.update(prec5[0], input.size(0))
+        cp_energy_record.update(cp_energy.item(), 1)
         skip_ratios.update(skips, input.size(0))
 
         # measure elapsed time
@@ -306,6 +322,7 @@ def train(args, train_loader, model, criterion,
                          "Total rewards {rewards.val:.3f} ({rewards.avg:.3f})\t"
                          "Prec@1 {top1.val:.3f} ({top1.avg:.3f})\t"
                          "Prec@5 {top5.val:.3f} ({top5.avg:.3f})\t"
+                         'Energy_ratio: {cp_energy_record.val:.3f}({cp_energy_record.avg:.3f})\t'
                 .format(
                 epoch, i, len(train_loader),
                 batch_time=batch_time,
@@ -313,7 +330,8 @@ def train(args, train_loader, model, criterion,
                 loss=losses,
                 rewards=total_rewards,
                 top1=top1,
-                top5=top5))
+                top5=top5,
+                cp_energy_record=cp_energy_record))
             logging.info('total gate rewards = {:.3f}'.format(
                 total_gate_rewards))
 
@@ -373,6 +391,7 @@ def validate(args, val_loader, model, criterion, epoch):
     losses = AverageMeter()
     top1 = AverageMeter()
     top5 = AverageMeter()
+    cp_energy_record = AverageMeter()
     skip_ratios = ListAverageMeter()
 
     # switch to evaluation mode
@@ -387,6 +406,14 @@ def validate(args, val_loader, model, criterion, epoch):
         # compute output
         output, masks, logprobs, hidden = model(input_var, target_var)
 
+        energy_parameter = read_test(args.beta)[1:]
+
+        energy_cost_mask = 0
+        for layer in range(15):
+            energy_cost_mask += masks[layer] * energy_parameter[layer]
+
+        cp_energy = (energy_cost_mask.sum() / (sum(energy_parameter) * masks[0].size(0))) * 100
+
         skips = [mask.data.le(0.5).float().mean() for mask in masks]
         if skip_ratios.len != len(skips):
             skip_ratios.set_len(len(skips))
@@ -398,6 +425,7 @@ def validate(args, val_loader, model, criterion, epoch):
         top5.update(prec5[0], input.size(0))
         skip_ratios.update(skips, input.size(0))
         losses.update(loss.data[0], input.size(0))
+        cp_energy_record.update(cp_energy.item(), 1)
         batch_time.update(time.time() - end)
         end = time.time()
 
@@ -411,11 +439,15 @@ def validate(args, val_loader, model, criterion, epoch):
                 'Loss: {loss.val:.3f}({loss.avg:.3f})\t'
                 'Prec@1: {top1.val:.3f}({top1.avg:.3f})\t'
                 'Prec@5: {top5.val:.3f}({top5.avg:.3f})\t'
+                'Energy_ratio: {cp_energy_record.val:.3f}({cp_energy_record.avg:.3f})\t'
+                'beta: {beta:.1f}\t'
                     .format(epoch, i, len(val_loader),
                             batch_time=batch_time,
                             loss=losses,
                             top1=top1,
                             top5=top5,
+                            cp_energy_record=cp_energy_record,
+                            beta=args.beta
                 )
             )
 
