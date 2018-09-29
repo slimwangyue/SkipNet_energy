@@ -360,7 +360,8 @@ def validate(args, val_loader, model, criterion, epoch):
             energy_cost_mask += masks[layer] * energy_parameter[layer]
 
 
-        cp_energy = (energy_cost_mask.sum() / (sum(energy_parameter) * masks[0].size(0))) * 100
+        cp_energy = ((energy_cost_mask.sum() + read_test(args.beta)[0] * masks[0].size(0)) / (
+                    (sum(energy_parameter) + read_test(args.beta)[0]) * masks[0].size(0))) * 100
 
         skips = [mask.data.le(0.5).float().mean() for mask in masks]
         if skip_ratios.len != len(skips):

@@ -300,6 +300,9 @@ class RecurrentGatedResNet(nn.Module):
         self.embed_dim = embed_dim
         self.hidden_dim = hidden_dim
 
+        self.comp_mac_all = 0
+        self.comp_mac_skipped = 0
+
         # going to have 4 groups of layers. For the easiness of skipping,
         # We are going to break the sequential of layers into a list of layers.
         self._make_group(block, 64, layers[0], group_id=1, pool_size=56)
@@ -393,6 +396,7 @@ class RecurrentGatedResNet(nn.Module):
         gprobs.append(gprob)
         masks.append(mask.squeeze())
         prev = x  # input of next layer
+
 
         for g in range(4):
             for i in range(0 + int(g == 0), self.num_layers[g]):

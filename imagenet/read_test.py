@@ -41,13 +41,18 @@ def read_test(beta=100000000):
     layers = []
     bottlenecks = []
     comp_time_block = 0
+    mem_time_block = 0
+    bottlenecks_comp = []
     for i, item in enumerate(df['Layer name']):
         if i <= 1 or i >= 70:
-            continue
+            continue 
 
         if item == 'Sum':
-            bottlenecks.append(comp_time_block / beta)
+
+            bottlenecks_comp.append(comp_time_block / beta)
+            bottlenecks.append((comp_time_block + mem_time_block) / beta)
             comp_time_block = 0
+            mem_time_block = 0
             continue
         index = int(df['layer type'][i])
         ofmap_h = df[' OFMAP Height'][i]
@@ -55,10 +60,14 @@ def read_test(beta=100000000):
         channel = df[' Channels'][i]
         filter_h = df[' Filter Height'][i]
         filter_w = df[' Filter Width'][i]
-        comp_time_tmp = ofmap_h * ofmap_w * channel * filter_h * filter_w
+        filter_num = df[' Num Filter'][i]
+        comp_time_tmp = ofmap_h * ofmap_w * channel * filter_h * filter_w * filter_num
         comp_time_block += comp_time_tmp
-        layers.append(comp_time_tmp + L1RdCount[index] + L1WrCount[index] + alpha * L2RdCount[index] + alpha * L2WrCount[index])
+        mem_access_tmp = L1RdCount[index] + L1WrCount[index] + alpha * L2RdCount[index] + alpha * L2WrCount[index]
+        mem_time_block += mem_access_tmp
+        # layers.append(comp_time_tmp)
 
-    # print(layers)
-    # print(bottlenecks)
+    print(bottlenecks)
+    print(bottlenecks_comp)
     return bottlenecks
+read_test(1e10)

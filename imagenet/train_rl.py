@@ -203,7 +203,7 @@ def run_training(args):
 
 
 def repackage_hidden(h):
-    if type(h) == Variable:
+    if type(h) == torch.Tensor:
         return Variable(h.data)
     else:
         return tuple(repackage_hidden(v) for v in h)
@@ -299,14 +299,14 @@ def train(args, train_loader, model, criterion,
 
         # measure accuracy and record loss
         prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
-        losses.update(loss.data[0], input.size(0))
+        losses.update(loss.data.item(), input.size(0))
         total_rewards.update(torch.cat(list(itertools.chain.from_iterable(
             cum_rewards.values()))).mean().data[0],
                              input.size(0))
         total_gate_rewards = torch.cat(list(itertools.chain.from_iterable(
             rewards.values()))).sum().data[0]
-        top1.update(prec1[0], input.size(0))
-        top5.update(prec5[0], input.size(0))
+        top1.update(prec1.item(), input.size(0))
+        top5.update(prec5.item(), input.size(0))
         cp_energy_record.update(cp_energy.item(), 1)
         skip_ratios.update(skips, input.size(0))
 
@@ -412,7 +412,8 @@ def validate(args, val_loader, model, criterion, epoch):
         for layer in range(15):
             energy_cost_mask += masks[layer] * energy_parameter[layer]
 
-        cp_energy = (energy_cost_mask.sum() / (sum(energy_parameter) * masks[0].size(0))) * 100
+        cp_energy = ((energy_cost_mask.sum() + read_test(args.beta)[0] * masks[0].size(0)) / (
+                    (sum(energy_parameter) + read_test(args.beta)[0]) * masks[0].size(0))) * 100
 
         skips = [mask.data.le(0.5).float().mean() for mask in masks]
         if skip_ratios.len != len(skips):
@@ -421,10 +422,10 @@ def validate(args, val_loader, model, criterion, epoch):
 
         # measure accuracy and record loss
         prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
-        top1.update(prec1[0], input.size(0))
-        top5.update(prec5[0], input.size(0))
+        top1.update(prec1.item(), input.size(0))
+        top5.update(prec5.item(), input.size(0))
         skip_ratios.update(skips, input.size(0))
-        losses.update(loss.data[0], input.size(0))
+        losses.update(loss.data.item(), input.size(0))
         cp_energy_record.update(cp_energy.item(), 1)
         batch_time.update(time.time() - end)
         end = time.time()
