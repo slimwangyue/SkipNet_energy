@@ -218,14 +218,14 @@ def train(args, train_loader, model, criterion, optimizer, epoch):
         energy_parameter = read_test(args.beta)[1:]
 
         energy_cost = None
-        for layer in range(15):
+        for layer in range(len(energy_parameter)):
             if energy_cost is None:
                 energy_cost = probs[layer] * energy_parameter[layer]
             else:
                 energy_cost += probs[layer] * energy_parameter[layer]
 
         energy_cost_mask = 0
-        for layer in range(15):
+        for layer in range(len(energy_parameter)):
             energy_cost_mask += masks[layer] * energy_parameter[layer]
 
         cp_energy = ((energy_cost_mask.sum() + read_test(args.beta)[0] * masks[0].size(0)) / ((sum(energy_parameter) + read_test(args.beta)[0]) * masks[0].size(0))) * 100
@@ -349,14 +349,14 @@ def validate(args, val_loader, model, criterion, epoch):
         energy_parameter = read_test(args.beta)[1:]
 
         energy_cost = None
-        for layer in range(15):
+        for layer in range(len(energy_parameter)):
             if energy_cost is None:
                 energy_cost = logprobs[layer] * energy_parameter[layer]
             else:
                 energy_cost += logprobs[layer] * energy_parameter[layer]
 
         energy_cost_mask = 0
-        for layer in range(15):
+        for layer in range(len(energy_parameter)):
             energy_cost_mask += masks[layer] * energy_parameter[layer]
 
 
@@ -428,7 +428,6 @@ def validate(args, val_loader, model, criterion, epoch):
         skip_summaries.append(1 - skip_ratios.avg[idx])
     cp = ((sum(skip_summaries) + 1) / (len(skip_summaries) + 1)) * 100
     logging.info('* Total Computation Percentage: {:.3f} %'.format(cp))
-
     return top1.avg
 
 
@@ -463,7 +462,7 @@ def save_checkpoint(state, is_best, filename='checkpoint.pth.tar'):
     if is_best:
         save_path = os.path.dirname(filename)
         shutil.copyfile(filename, os.path.join(save_path,
-                                               'model_best.pth.tar'))
+                                               'model_best_eic.pth.tar'))
 
 
 class AverageMeter(object):

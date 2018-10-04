@@ -4,7 +4,7 @@ from pandas import ExcelFile
 
 
 def read_test(beta=100000000):
-    file = open('run.txt', 'r')
+    file = open('run_total.log', 'r')
 
     lines = file.readlines()
     L1RdCount = []
@@ -34,6 +34,13 @@ def read_test(beta=100000000):
         # if line.find('Compute rumtime') >= 0:
         #     time = float(line.split()[2])
         #     comp_time.append(time * num)
+    
+   # for i in range(28):
+        #print('layer type', i+1)
+        #print('l1rd: ', L1RdCount[i], L1WrCount[i], L2RdCount[i], L2WrCount[i])    
+        #print('l1wr: ', L1WrCount[i])    
+        #print('l2rd: ', L2RdCount[i])    
+        #print('l2wr: ', L2WrCount[i])    
 
     df = pd.read_excel('./model_ResNet50.xlsx', sheetname='ResNet50')
 
@@ -47,6 +54,9 @@ def read_test(beta=100000000):
         if i <= 1 or i >= 70:
             continue 
 
+        if 'ds' in item:
+            continue
+
         if item == 'Sum':
 
             bottlenecks_comp.append(comp_time_block / beta)
@@ -54,7 +64,7 @@ def read_test(beta=100000000):
             comp_time_block = 0
             mem_time_block = 0
             continue
-        index = int(df['layer type'][i])
+        index = int(df['layer type'][i])-1
         ofmap_h = df[' OFMAP Height'][i]
         ofmap_w = df[' OFMAP Width'][i]
         channel = df[' Channels'][i]
@@ -67,7 +77,8 @@ def read_test(beta=100000000):
         mem_time_block += mem_access_tmp
         # layers.append(comp_time_tmp)
 
-    print(bottlenecks)
-    print(bottlenecks_comp)
+    # print(bottlenecks)
+    # print(bottlenecks_comp)
     return bottlenecks
-read_test(1e10)
+# read_test()
+
